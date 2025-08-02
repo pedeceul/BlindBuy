@@ -1,0 +1,32 @@
+{
+  "name": "olx-reviews-backend",
+  "version": "1.0.0",
+  "description": "Backend API for OLX Reviews Chrome Extension",
+  "main": "cmd/server/main.go",
+  "scripts": {
+    "test": "go test ./tests/... -v",
+    "test:database": "go test ./tests/... -run TestDatabase -v",
+    "test:graphql": "go test ./tests/... -run TestGraphQL -v",
+    "test:api": "go test ./tests/... -run TestAPI -v",
+    "test:models": "go test ./tests/... -run TestModels -v",
+    "test:coverage": "go test ./tests/... -coverprofile=coverage.out && go tool cover -html=coverage.out",
+    "build": "go build -o server cmd/server/main.go",
+    "run": "go run cmd/server/main.go",
+    "migrate": "go run entc.go && go run -mod=mod entgo.io/ent/cmd/ent migrate --dir=./internal",
+    "generate": "go run entc.go && go run gqlgen.yml"
+  },
+  "keywords": [
+    "go",
+    "fiber",
+    "graphql",
+    "postgresql",
+    "ent",
+    "chrome-extension",
+    "reviews"
+  ],
+  "author": "BlindBuy Team",
+  "license": "MIT",
+  "devDependencies": {
+    "github.com/lib/pq": "^1.10.9"
+  }
+} 

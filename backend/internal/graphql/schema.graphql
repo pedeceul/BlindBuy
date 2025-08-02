@@ -1,0 +1,86 @@
+type Ad {
+  id: ID!
+  url: String!
+  title: String
+  price: String
+  category: String
+  phone: String
+  averageRating: Float
+  reviewCount: Int
+  seller: Seller
+  reviews: [Review!]!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type Seller {
+  id: ID!
+  name: String
+  phone: String
+  location: String
+  profileUrl: String
+  averageRating: Float
+  reviewCount: Int
+  adCount: Int
+  reviews: [Review!]!
+  ads: [Ad!]!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type Review {
+  id: ID!
+  reviewType: ReviewType!
+  rating: Int!
+  comment: String!
+  phone: String
+  ad: Ad
+  seller: Seller
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+enum ReviewType {
+  AD
+  SELLER
+}
+
+input CreateAdReviewInput {
+  adUrl: String!
+  adTitle: String
+  adPrice: String
+  adCategory: String
+  adPhone: String
+  rating: Int!
+  comment: String!
+  phone: String
+}
+
+input CreateSellerReviewInput {
+  sellerId: String!
+  sellerName: String
+  sellerPhone: String
+  sellerLocation: String
+  sellerProfileUrl: String
+  rating: Int!
+  comment: String!
+  phone: String
+}
+
+type Query {
+  adByUrl(url: String!): Ad
+  sellerById(id: String!): Seller
+  sellerByProfileUrl(profileUrl: String!): Seller
+  reviewsByAdId(adId: ID!): [Review!]!
+  reviewsBySellerId(sellerId: String!): [Review!]!
+  allAds: [Ad!]!
+  allSellers: [Seller!]!
+  allReviews: [Review!]!
+}
+
+type Mutation {
+  createAdReview(input: CreateAdReviewInput!): Review!
+  createSellerReview(input: CreateSellerReviewInput!): Review!
+}
+
+scalar DateTime 

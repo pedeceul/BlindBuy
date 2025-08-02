@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "BlindBuy",
+  "version": "1.0.0",
+  "description": "Add reviews and ratings to OLX ads and sellers",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting",
+    "notifications"
+  ],
+  "host_permissions": [
+    "https://*.olx.ro/*",
+    "https://*.olx.pl/*",
+    "https://*.olx.ua/*",
+    "https://*.olx.com/*",
+    "http://localhost:4000/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.olx.ro/*",
+        "https://*.olx.pl/*",
+        "https://*.olx.ua/*",
+        "https://*.olx.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_title": "BlindBuy",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+} 
