@@ -2,7 +2,35 @@
 
 A Chrome Extension for reviewing Romanian OLX ads and sellers with a modern, user-friendly interface.
 
-## 🌟 Features
+## ⚠️ Project Status: On Hold
+
+**This project is currently on hold while we explore better UX approaches.** We've encountered challenges with the current implementation approaches:
+
+### 🚫 Current Challenges
+
+1. **Content Injection Issues**: Injecting content directly into OLX pages raises legal and technical concerns
+2. **Window UX Problems**: Creating separate windows without Chrome controls provides poor user experience
+3. **Extension Limitations**: Chrome Extension API has significant limitations for seamless integration
+
+### 🔍 What We've Tried
+
+- **Content Injection**: Direct DOM manipulation on OLX pages (legal concerns)
+- **Frameless Windows**: Attempted to create custom windows without Chrome controls (poor UX)
+- **Popup Approach**: Traditional extension popup (limited functionality)
+- **Auto-pinning Prompts**: Programmatic extension management (not allowed by Chrome)
+
+### 💡 We Need Your Ideas!
+
+We're looking for innovative approaches to solve these UX challenges. Some areas we're exploring:
+
+- **Better Integration Methods**: How to seamlessly integrate with OLX without injection
+- **Alternative UI Patterns**: Different ways to present review functionality
+- **Legal Compliance**: Approaches that respect OLX's terms of service
+- **User Experience**: How to make the review process intuitive and non-intrusive
+
+**Please submit your ideas as GitHub Issues or Discussions!**
+
+## 🌟 Features (Current Implementation)
 
 - **Smart Ad Detection**: Automatically detects OLX ad pages and extracts product information
 - **Easy Review System**: Rate ads from 1-5 stars with detailed comments
@@ -167,11 +195,21 @@ BlindBuy/
 
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+**We're actively seeking ideas and contributions!** 
+
+### How to Contribute
+
+1. **Submit Ideas**: Create GitHub Issues for UX improvement suggestions
+2. **Join Discussions**: Participate in GitHub Discussions about alternative approaches
+3. **Fork and Experiment**: Try different implementation approaches
+4. **Share Research**: Document findings about Chrome Extension limitations and workarounds
+
+### Areas We Need Help With
+
+- **Legal Research**: Understanding OLX's terms of service and legal boundaries
+- **UX Design**: Alternative ways to present review functionality
+- **Technical Solutions**: Workarounds for Chrome Extension limitations
+- **Integration Methods**: Non-invasive ways to integrate with OLX
 
 ## 📄 License
 
@@ -186,4 +224,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Made with ❤️ for the Romanian OLX community** 
+**Made with ❤️ for the Romanian OLX community**
+
+*This project is on hold while we explore better UX approaches. We welcome your ideas and contributions!* 
